@@ -61,7 +61,27 @@ export default function Chatbot() {
                 : "bg-gray-700 self-start mr-auto"
             }`}
           >
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+            <ReactMarkdown
+  remarkPlugins={[remarkGfm]}
+  components={{
+    table: ({ children }) => (
+      <table className="w-full border-collapse border border-gray-700">
+        {children}
+      </table>
+    ),
+    th: ({ children }) => (
+      <th className="border border-gray-600 bg-gray-800 px-4 py-2 text-left">
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td className="border border-gray-600 px-4 py-2">{children}</td>
+    ),
+    tr: ({ children }) => <tr className="even:bg-gray-900">{children}</tr>,
+  }}
+>
+  {msg.text}
+</ReactMarkdown>
           </div>
         ))}
         
