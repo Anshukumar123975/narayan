@@ -1,6 +1,6 @@
 # To run:
-### cd chatbot-frontend
-### npm run dev
+### 1.cd chatbot-frontend
+### 2.npm run dev
 
 # React + Vite
 
