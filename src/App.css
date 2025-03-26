@@ -17,6 +17,21 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.markdown th, .markdown td {
+  border: 1px solid rgba(255, 255, 255, 0.5); /* White translucent border */
+  padding: 8px;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 @keyframes logo-spin {
   from {

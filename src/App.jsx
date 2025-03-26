@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function Chatbot() {
   const [message, setMessage] = useState("");
@@ -49,19 +51,20 @@ export default function Chatbot() {
       <div
         ref={chatContainerRef}
         className="w-[98%] h-[90vh] border-t border-b rounded-md border-gray-700 bg-gray-900 shadow-xl overflow-y-auto flex flex-col p-6 mb-16"
-      >
+      > 
         {chat.map((msg, index) => (
           <div
             key={index}
-            className={`mb-3 p-3 rounded-lg text-sm max-w-[60%] ${
+            className={`mb-3 p-3 rounded-lg text-sm text-white max-w-[90%] ${
               msg.role === "user"
-                ? "bg-blue-600 text-white self-end ml-auto"
-                : "bg-gray-700 text-white self-start mr-auto"
+                ? "bg-blue-600 self-end ml-auto"
+                : "bg-gray-700 self-start mr-auto"
             }`}
           >
-            {msg.text}
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
           </div>
         ))}
+        
         {loading && <p className="text-gray-500">Typing...</p>}
       </div>
 
