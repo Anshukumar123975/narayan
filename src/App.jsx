@@ -46,7 +46,7 @@ export default function Chatbot() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gray-950 text-white">
-      <h1 className="text-3xl font-semibold mb-4 mt-2 text-[#4da4da]">TaxTrack A.I Assistant</h1>
+      <h1 className="text-3xl font-semibold mb-4 mt-2 text-[#4da4da]">TaxTrack AI Assistant</h1>
 
       {/* Chat Container */}
       <div
